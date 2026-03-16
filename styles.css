@@ -30,7 +30,6 @@ body {
   padding: 20px;
 }
 
-/* HEADER */
 .header-container {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -76,7 +75,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* BODY LAYOUT */
 .body-container {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -89,7 +87,6 @@ body {
   padding: 25px;
 }
 
-/* SECTIONS */
 .sidebar-title,
 .section-title {
   font-size: 1.1rem;
@@ -129,7 +126,6 @@ body {
   margin-bottom: 5px;
 }
 
-/* SKILLS BARS */
 .skills-list {
   list-style: none;
 }
@@ -177,7 +173,6 @@ body {
   width: 70%;
 }
 
-/* EXPERIENCE */
 .project-card {
   margin-bottom: 25px;
 }
@@ -186,7 +181,6 @@ body {
   padding-left: 18px;
 }
 
-/* MOBILE */
 @media (max-width: 800px) {
   .header-container,
   .body-container {
