@@ -1,10 +1,9 @@
 :root {
-  --primary-color: #8b0071;
-  --accent-color: #ff00d9;
-  --text-dark: #2d3436;
-  --text-light: #636e72;
-  --bg-light: #f4f7f6;
-  --sidebar-bg: #86024f;
+  --accent-color: #c71f6d;
+  --text-color: #444444;
+  --border-color: #d8d8d8;
+  --bg-light: #ffffff;
+  --font-family: "Inter", sans-serif;
 }
 
 * {
@@ -14,9 +13,9 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #dfe6e9;
-  color: var(--text-dark);
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-color);
   line-height: 1.6;
   padding: 20px;
 }
@@ -24,29 +23,26 @@ body {
 .resume-container {
   max-width: 1000px;
   margin: 0 auto;
-  background: white;
+  background: var(--bg-light);
   display: grid;
-  grid-template-columns: 300px 1fr;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  min-height: 1100px;
-  border-radius: 4px;
-  overflow: hidden;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  padding: 40px;
 }
 
-.sidebar {
-  background-color: var(--sidebar-bg);
-  color: white;
-  padding: 40px 25px;
+.header-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
 }
 
 .profile-photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  margin: 0 auto 30px;
-  border: 4px solid var(--primary-color);
+  width: 280px;
+  height: 380px;
+  border: 1px dashed var(--border-color);
+  padding: 20px;
   overflow: hidden;
-  background: #6f5765;
+  position: relative;
 }
 
 .profile-photo img {
@@ -55,122 +51,201 @@ body {
   object-fit: cover;
 }
 
+.hero {
+  border: 1px dashed var(--border-color);
+  padding: 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.user-profession {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.user-name {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.header-line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin-bottom: 25px;
+}
+
+.objective-section .section-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.body-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+}
+
+.sidebar {
+  border: 1px dashed var(--border-color);
+  padding: 20px;
+  position: relative;
+}
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, var(--accent-color) 0%, white 70%);
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
 .sidebar-section {
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .sidebar-title {
   font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 5px;
-  margin-bottom: 15px;
   color: var(--accent-color);
+  margin-bottom: 15px;
 }
 
-.contact-info p {
-  font-size: 0.85rem;
-  margin-bottom: 10px;
+.contact-info p,
+.education-card p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
 }
 
 .contact-info a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
 }
 
-.skills-list,
-.languages-list {
-  list-style: none;
-}
-
-.skills-list li,
-.languages-list li {
-  background: rgba(255, 255, 255, 0.07);
-  margin-bottom: 8px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 0.85rem;
-  border-left: 3px solid var(--accent-color);
-}
-
-.main-content {
-  padding: 50px;
-}
-
-.hero {
-  margin-bottom: 40px;
-}
-
-.user-name {
-  font-size: 2.8rem;
-  color: var(--sidebar-bg);
+.education-card h3 {
+  font-size: 1rem;
+  color: var(--text-color);
   margin-bottom: 5px;
 }
 
-.user-profession {
-  font-size: 1.3rem;
-  color: var(--primary-color);
-  font-weight: 500;
+.education-card .date {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
-.header-line {
-  width: 50px;
-  height: 4px;
-  background: var(--accent-color);
-  margin-top: 15px;
+.main-content {
+  border: 1px dashed var(--border-color);
+  padding: 20px;
+  position: relative;
 }
 
-.section-title {
-  font-size: 1.4rem;
-  color: var(--sidebar-bg);
-  margin: 30px 0 20px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+.main-content::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, var(--accent-color) 0%, white 70%);
+  opacity: 0.1;
+  border-radius: 50%;
 }
 
-.education-card,
+.experience-section .section-title,
+.skills-section .section-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
 .project-card {
   margin-bottom: 20px;
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.card-header h3 {
-  font-size: 1.1rem;
-  color: var(--primary-color);
-}
-
-.date {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  font-weight: 600;
-}
-
 .project-card h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
+  color: var(--text-color);
   margin-bottom: 8px;
 }
 
 .project-card ul {
   margin-left: 20px;
-  font-size: 0.95rem;
-  color: var(--text-light);
+  font-size: 0.9rem;
 }
 
 .project-card li {
   margin-bottom: 4px;
 }
 
+.skills-list {
+  list-style: none;
+}
+
+.skills-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.skill-label {
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.skill-bar {
+  height: 8px;
+  background: linear-gradient(to right, var(--accent-color) 0%, white 100%);
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+.bar-90 {
+  width: 90%;
+}
+.bar-85 {
+  width: 85%;
+}
+.bar-80 {
+  width: 80%;
+}
+.bar-75 {
+  width: 75%;
+}
+.bar-70 {
+  width: 70%;
+}
+
 @media (max-width: 800px) {
-  .resume-container {
+  .header-container,
+  .body-container {
     grid-template-columns: 1fr;
   }
-  .main-content {
-    padding: 30px;
+  .profile-photo {
+    width: 100%;
+    height: auto;
   }
 }
